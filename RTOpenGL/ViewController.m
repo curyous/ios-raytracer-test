@@ -74,6 +74,16 @@ GLfloat gCubeVertexData[216] =
     -0.5f, 0.5f, -0.5f,        0.0f, 0.0f, -1.0f
 };
 
+// GL default is CCW (Counter-clockwise)
+GLfloat gTwoTriangles[9] =
+{
+    // Data layout is:
+    // positionX, positionY, positioInteractive Global Illumination using Fast Ray TracingnZ
+    -1.0f, -1.0f, 0.0f,
+     1.0f, -1.0f, 0.0f,
+    -1.0f,  1.0f, 0.0f
+};
+
 @interface ViewController () {
     GLuint _program;
     

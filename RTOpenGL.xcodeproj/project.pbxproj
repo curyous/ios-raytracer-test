@@ -25,6 +25,8 @@
 		DA056EBE15972FAB00C0B447 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA056E9415972FAB00C0B447 /* Foundation.framework */; };
 		DA056EC615972FAB00C0B447 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA056EC415972FAB00C0B447 /* InfoPlist.strings */; };
 		DA056EC915972FAB00C0B447 /* RTOpenGLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA056EC815972FAB00C0B447 /* RTOpenGLTests.m */; };
+		DA056ED315973A8D00C0B447 /* RTShader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = DA056ED215973A8D00C0B447 /* RTShader.vsh */; };
+		DA056ED515973AA800C0B447 /* RTShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = DA056ED415973AA800C0B447 /* RTShader.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		DA056EC515972FAB00C0B447 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA056EC715972FAB00C0B447 /* RTOpenGLTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTOpenGLTests.h; sourceTree = "<group>"; };
 		DA056EC815972FAB00C0B447 /* RTOpenGLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTOpenGLTests.m; sourceTree = "<group>"; };
+		DA056ED215973A8D00C0B447 /* RTShader.vsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = RTShader.vsh; path = Shaders/RTShader.vsh; sourceTree = "<group>"; };
+		DA056ED415973AA800C0B447 /* RTShader.fsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = RTShader.fsh; path = Shaders/RTShader.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,8 @@
 				DA056EB215972FAB00C0B447 /* ViewController.h */,
 				DA056EB315972FAB00C0B447 /* ViewController.m */,
 				DA056E9D15972FAB00C0B447 /* Supporting Files */,
+				DA056ED415973AA800C0B447 /* RTShader.fsh */,
+				DA056ED215973A8D00C0B447 /* RTShader.vsh */,
 			);
 			path = RTOpenGL;
 			sourceTree = "<group>";
@@ -280,6 +286,8 @@
 				DA056EA315972FAB00C0B447 /* main.m in Sources */,
 				DA056EA715972FAB00C0B447 /* AppDelegate.m in Sources */,
 				DA056EB415972FAB00C0B447 /* ViewController.m in Sources */,
+				DA056ED315973A8D00C0B447 /* RTShader.vsh in Sources */,
+				DA056ED515973AA800C0B447 /* RTShader.fsh in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
