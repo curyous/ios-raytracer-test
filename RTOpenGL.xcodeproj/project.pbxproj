@@ -44,23 +44,23 @@
 		DA056E9615972FAB00C0B447 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DA056E9815972FAB00C0B447 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		DA056E9A15972FAB00C0B447 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		DA056E9E15972FAB00C0B447 /* RTOpenGL-Info.plist */ = {isa = PBXFileReference; path = "RTOpenGL-Info.plist"; sourceTree = "<group>"; };
+		DA056E9E15972FAB00C0B447 /* RTOpenGL-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RTOpenGL-Info.plist"; sourceTree = "<group>"; };
 		DA056EA015972FAB00C0B447 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA056EA215972FAB00C0B447 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DA056EA415972FAB00C0B447 /* RTOpenGL-Prefix.pch */ = {isa = PBXFileReference; path = "RTOpenGL-Prefix.pch"; sourceTree = "<group>"; };
-		DA056EA515972FAB00C0B447 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		DA056EA415972FAB00C0B447 /* RTOpenGL-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RTOpenGL-Prefix.pch"; sourceTree = "<group>"; };
+		DA056EA515972FAB00C0B447 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA056EA615972FAB00C0B447 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DA056EA915972FAB00C0B447 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		DA056EAC15972FAB00C0B447 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		DA056EAE15972FAB00C0B447 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
 		DA056EB015972FAB00C0B447 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
-		DA056EB215972FAB00C0B447 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		DA056EB215972FAB00C0B447 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		DA056EB315972FAB00C0B447 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DA056EBA15972FAB00C0B447 /* RTOpenGLTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RTOpenGLTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA056EBB15972FAB00C0B447 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		DA056EC315972FAB00C0B447 /* RTOpenGLTests-Info.plist */ = {isa = PBXFileReference; path = "RTOpenGLTests-Info.plist"; sourceTree = "<group>"; };
+		DA056EC315972FAB00C0B447 /* RTOpenGLTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RTOpenGLTests-Info.plist"; sourceTree = "<group>"; };
 		DA056EC515972FAB00C0B447 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DA056EC715972FAB00C0B447 /* RTOpenGLTests.h */ = {isa = PBXFileReference; path = RTOpenGLTests.h; sourceTree = "<group>"; };
+		DA056EC715972FAB00C0B447 /* RTOpenGLTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTOpenGLTests.h; sourceTree = "<group>"; };
 		DA056EC815972FAB00C0B447 /* RTOpenGLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTOpenGLTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
