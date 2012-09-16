@@ -77,14 +77,14 @@ GLfloat gCubeVertexData[216] =
 };
 
 // GL default is CCW (Counter-clockwise)
-GLfloat gTwoTriangles[9] =
+/*GLfloat gTwoTriangles[9] =
 {
     // Data layout is:
     // positionX, positionY, positionZ
     -1.0f, -1.0f, 0.0f,
      1.0f, -1.0f, 0.0f,
     -1.0f,  1.0f, 0.0f
-};
+};*/
 
 @interface ViewController () {
     GLuint _program;
@@ -132,6 +132,9 @@ GLfloat gTwoTriangles[9] =
     GLKView *view = (GLKView *)self.view;
     view.context = self.context;
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+    view.multipleTouchEnabled = YES;
+    
+    self.preferredFramesPerSecond = 60;
     
     [self setupGL];
 }

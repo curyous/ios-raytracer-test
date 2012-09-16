@@ -12,13 +12,17 @@
 @implementation RayTracer
 
 // GL default is CCW (Counter-clockwise)
-GLfloat twoTriangles[9] =
+GLfloat twoTriangles[18] =
 {
     // Data layout is:
     // positionX, positionY, positionZ
     -1.0f, -1.0f, 0.0f,
      1.0f, -1.0f, 0.0f,
-    -1.0f,  1.0f, 0.0f
+    -1.0f,  1.0f, 0.0f,
+    
+    -1.0f,  1.0f, 0.0f,
+     1.0f, -1.0f, 0.0f,
+     1.0f,  1.0f, 0.0f    
 };
 
 
@@ -51,7 +55,7 @@ GLfloat twoTriangles[9] =
 {
     glUseProgram(_rtShaderProgram.program);
     glBindVertexArrayOES(_rtVertexArray);
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
 }
 
 @end
