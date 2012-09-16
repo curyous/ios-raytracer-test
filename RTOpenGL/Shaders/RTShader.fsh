@@ -25,7 +25,7 @@ uniform vec3 uScreenPosition;
 uniform vec3 uRight;
 uniform vec3 uUp;
 
-uniform vec3 uTriangleVertices[3];
+uniform vec3 uTriangleVertices[6];
 
 
 bool intersectTriangle(vec3 origin, vec3 dir, vec3 p0, vec3 p1, vec3 p2) {
@@ -81,7 +81,11 @@ void main()
     //dir.r = uTriangleVertices[2].z;
     if (intersectTriangle(uEyePosition, dir, uTriangleVertices[0], uTriangleVertices[1], uTriangleVertices[2])) {
         gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
-    } else {    
-        gl_FragColor = vec4(dir, 1.0);
+    } else {
+        if (intersectTriangle(uEyePosition, dir, uTriangleVertices[3], uTriangleVertices[4], uTriangleVertices[5])) {
+            gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+        } else {
+            gl_FragColor = vec4(dir, 1.0);
+        }
     }
 }

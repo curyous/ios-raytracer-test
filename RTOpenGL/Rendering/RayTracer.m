@@ -25,10 +25,15 @@ GLfloat twoTriangles[30] =
      1.0f,  1.0f, 0.0f,   1.0f,  1.0f
 };
 
-GLfloat triangleVertices[9] =
+GLfloat triangleVertices[18] =
 {
+    // Back
     -0.5f, 0.5f, 1.0f,
     -0.5f, 0.5f, 0.0f,
+     0.5f, 0.5f, 0.0f,
+    
+    -0.5f, 0.5f, 1.0f,
+     0.5f, 0.5f, 0.0f,
      0.5f, 0.5f, 1.0f
 };
 
@@ -77,7 +82,7 @@ GLfloat triangleVertices[9] =
     glUniform3f(_rtShaderProgram.rightUniformLocation, _right.x, _right.y, _right.z);
     glUniform3f(_rtShaderProgram.upUniformLocation, _up.x, _up.y, _up.z);
     
-    glUniform3fv(_rtShaderProgram.trianglesUniformLocation, 3, triangleVertices);
+    glUniform3fv(_rtShaderProgram.trianglesUniformLocation, sizeof(triangleVertices) / 3, triangleVertices);
     
     glDrawArrays(GL_TRIANGLES, 0, 6);
 }
