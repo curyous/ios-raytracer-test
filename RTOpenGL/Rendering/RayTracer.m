@@ -25,6 +25,13 @@ GLfloat twoTriangles[30] =
      1.0f,  1.0f, 0.0f,   1.0f,  1.0f
 };
 
+GLfloat triangleVertices[9] =
+{
+    -0.5f, 0.5f, 1.0f,
+    -0.5f, 0.5f, 0.0f,
+     0.5f, 0.5f, 1.0f
+};
+
 
 - (id)init
 {
@@ -47,6 +54,12 @@ GLfloat twoTriangles[30] =
         
         glBindVertexArrayOES(0);
         
+        _eyePosition = GLKVector3Make(0.0f, -2.0f, 0.5f);
+        _screenPosition = GLKVector3Make(0.0f, -1.0f, 0.5f);
+        _right = GLKVector3Make(1.0f, 0.0f, 0.0f);
+        _up = GLKVector3Make(0.0f, 0.0f, 1.0f);
+
+        
         return self;
     }
     
@@ -58,6 +71,14 @@ GLfloat twoTriangles[30] =
 {
     glUseProgram(_rtShaderProgram.program);
     glBindVertexArrayOES(_rtVertexArray);
+        
+    glUniform3f(_rtShaderProgram.eyePositionUniformLocation, _eyePosition.x, _eyePosition.y, _eyePosition.z);
+    glUniform3f(_rtShaderProgram.screenPositionUniformLocation, _screenPosition.x, _screenPosition.y, _screenPosition.z);
+    glUniform3f(_rtShaderProgram.rightUniformLocation, _right.x, _right.y, _right.z);
+    glUniform3f(_rtShaderProgram.upUniformLocation, _up.x, _up.y, _up.z);
+    
+    glUniform3fv(_rtShaderProgram.trianglesUniformLocation, 3, triangleVertices);
+    
     glDrawArrays(GL_TRIANGLES, 0, 6);
 }
 

@@ -10,13 +10,23 @@
 
 @implementation RTShaderProgram
 
+@synthesize eyePositionUniformLocation = _eyePositionUniformLocation;
+@synthesize screenPositionUniformLocation = _screenPositionUniformLocation;
+@synthesize rightUniformLocation = _rightUniformLocation;
+@synthesize upUniformLocation = _upUniformLocation;
+
+@synthesize trianglesUniformLocation = _trianglesUniformLocation;
+
 -(id)init {
     if (self = [super init]) {
         [self loadShadersWithName:@"RTShader"];
         
-        //_ambientLightColourUniformLocation = glGetUniformLocation(_program, "uAmbientLightColour");
-        //_modelViewProjectionMatrixUniformLocation = glGetUniformLocation(_program, "uModelViewProjectionMatrix");
-        //_textureUniformLocation = glGetUniformLocation(_program, "uTexture");
+        _eyePositionUniformLocation = glGetUniformLocation(_program, "uEyePosition");
+        _screenPositionUniformLocation = glGetUniformLocation(_program, "uScreenPosition");
+        _rightUniformLocation = glGetUniformLocation(_program, "uRight");
+        _upUniformLocation = glGetUniformLocation(_program, "uUp");
+        
+        _trianglesUniformLocation = glGetUniformLocation(_program, "uTriangleVertices");
         
         return self;
     }
