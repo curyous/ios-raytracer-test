@@ -25,8 +25,10 @@
 		DA056EBE15972FAB00C0B447 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA056E9415972FAB00C0B447 /* Foundation.framework */; };
 		DA056EC615972FAB00C0B447 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA056EC415972FAB00C0B447 /* InfoPlist.strings */; };
 		DA056EC915972FAB00C0B447 /* RTOpenGLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA056EC815972FAB00C0B447 /* RTOpenGLTests.m */; };
-		DA056ED315973A8D00C0B447 /* RTShader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = DA056ED215973A8D00C0B447 /* RTShader.vsh */; };
-		DA056ED515973AA800C0B447 /* RTShader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = DA056ED415973AA800C0B447 /* RTShader.fsh */; };
+		DA056ED315973A8D00C0B447 /* RTShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = DA056ED215973A8D00C0B447 /* RTShader.vsh */; };
+		DA056ED515973AA800C0B447 /* RTShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = DA056ED415973AA800C0B447 /* RTShader.fsh */; };
+		DA17AD311605A56000ABE467 /* BaseShaderProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = DA17AD301605A56000ABE467 /* BaseShaderProgram.m */; };
+		DA17AD341605A5AE00ABE467 /* RTShaderProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = DA17AD331605A5AD00ABE467 /* RTShaderProgram.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,10 @@
 		DA056EC815972FAB00C0B447 /* RTOpenGLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTOpenGLTests.m; sourceTree = "<group>"; };
 		DA056ED215973A8D00C0B447 /* RTShader.vsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = RTShader.vsh; path = Shaders/RTShader.vsh; sourceTree = "<group>"; };
 		DA056ED415973AA800C0B447 /* RTShader.fsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; name = RTShader.fsh; path = Shaders/RTShader.fsh; sourceTree = "<group>"; };
+		DA17AD2F1605A56000ABE467 /* BaseShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseShaderProgram.h; path = Shaders/BaseShaderProgram.h; sourceTree = "<group>"; };
+		DA17AD301605A56000ABE467 /* BaseShaderProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseShaderProgram.m; path = Shaders/BaseShaderProgram.m; sourceTree = "<group>"; };
+		DA17AD321605A5AD00ABE467 /* RTShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTShaderProgram.h; path = Shaders/RTShaderProgram.h; sourceTree = "<group>"; };
+		DA17AD331605A5AD00ABE467 /* RTShaderProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTShaderProgram.m; path = Shaders/RTShaderProgram.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,7 @@
 		DA056E9C15972FAB00C0B447 /* RTOpenGL */ = {
 			isa = PBXGroup;
 			children = (
+				DA17AD2D1605A4CB00ABE467 /* Shaders */,
 				DA056EA515972FAB00C0B447 /* AppDelegate.h */,
 				DA056EA615972FAB00C0B447 /* AppDelegate.m */,
 				DA056EA815972FAB00C0B447 /* MainStoryboard_iPhone.storyboard */,
@@ -138,8 +145,6 @@
 				DA056EB215972FAB00C0B447 /* ViewController.h */,
 				DA056EB315972FAB00C0B447 /* ViewController.m */,
 				DA056E9D15972FAB00C0B447 /* Supporting Files */,
-				DA056ED415973AA800C0B447 /* RTShader.fsh */,
-				DA056ED215973A8D00C0B447 /* RTShader.vsh */,
 			);
 			path = RTOpenGL;
 			sourceTree = "<group>";
@@ -172,6 +177,19 @@
 				DA056EC415972FAB00C0B447 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA17AD2D1605A4CB00ABE467 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				DA17AD2F1605A56000ABE467 /* BaseShaderProgram.h */,
+				DA17AD301605A56000ABE467 /* BaseShaderProgram.m */,
+				DA056ED215973A8D00C0B447 /* RTShader.vsh */,
+				DA056ED415973AA800C0B447 /* RTShader.fsh */,
+				DA17AD321605A5AD00ABE467 /* RTShaderProgram.h */,
+				DA17AD331605A5AD00ABE467 /* RTShaderProgram.m */,
+			);
+			name = Shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +265,8 @@
 				DA056EA115972FAB00C0B447 /* InfoPlist.strings in Resources */,
 				DA056EAA15972FAB00C0B447 /* MainStoryboard_iPhone.storyboard in Resources */,
 				DA056EAD15972FAB00C0B447 /* MainStoryboard_iPad.storyboard in Resources */,
+				DA056ED315973A8D00C0B447 /* RTShader.vsh in Resources */,
+				DA056ED515973AA800C0B447 /* RTShader.fsh in Resources */,
 				DA056EAF15972FAB00C0B447 /* Shader.fsh in Resources */,
 				DA056EB115972FAB00C0B447 /* Shader.vsh in Resources */,
 			);
@@ -286,8 +306,8 @@
 				DA056EA315972FAB00C0B447 /* main.m in Sources */,
 				DA056EA715972FAB00C0B447 /* AppDelegate.m in Sources */,
 				DA056EB415972FAB00C0B447 /* ViewController.m in Sources */,
-				DA056ED315973A8D00C0B447 /* RTShader.vsh in Sources */,
-				DA056ED515973AA800C0B447 /* RTShader.fsh in Sources */,
+				DA17AD311605A56000ABE467 /* BaseShaderProgram.m in Sources */,
+				DA17AD341605A5AE00ABE467 /* RTShaderProgram.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +489,7 @@
 				DA056ECE15972FAB00C0B447 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA056ECF15972FAB00C0B447 /* Build configuration list for PBXNativeTarget "RTOpenGLTests" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +498,7 @@
 				DA056ED115972FAB00C0B447 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
