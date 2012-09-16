@@ -8,11 +8,7 @@
 
 #import "BaseShaderProgram.h"
 
-typedef enum {
-    ATTRIB_POSITION,
-    ATTRIB_NORMAL,
-    ATTRIB_TEXCOORD
-} AttributeLocation;
+
 
 
 @implementation BaseShaderProgram

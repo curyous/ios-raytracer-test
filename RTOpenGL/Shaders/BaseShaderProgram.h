@@ -10,7 +10,11 @@
 
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
-
+typedef enum {
+    ATTRIB_POSITION,
+    ATTRIB_NORMAL,
+    ATTRIB_TEXCOORD
+} AttributeLocation;
 
 @interface BaseShaderProgram : NSObject
 {

@@ -29,6 +29,7 @@
 		DA056ED515973AA800C0B447 /* RTShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = DA056ED415973AA800C0B447 /* RTShader.fsh */; };
 		DA17AD311605A56000ABE467 /* BaseShaderProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = DA17AD301605A56000ABE467 /* BaseShaderProgram.m */; };
 		DA17AD341605A5AE00ABE467 /* RTShaderProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = DA17AD331605A5AD00ABE467 /* RTShaderProgram.m */; };
+		DA17AD381605AC7D00ABE467 /* RayTracer.m in Sources */ = {isa = PBXBuildFile; fileRef = DA17AD371605AC7D00ABE467 /* RayTracer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		DA17AD301605A56000ABE467 /* BaseShaderProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseShaderProgram.m; path = Shaders/BaseShaderProgram.m; sourceTree = "<group>"; };
 		DA17AD321605A5AD00ABE467 /* RTShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTShaderProgram.h; path = Shaders/RTShaderProgram.h; sourceTree = "<group>"; };
 		DA17AD331605A5AD00ABE467 /* RTShaderProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTShaderProgram.m; path = Shaders/RTShaderProgram.m; sourceTree = "<group>"; };
+		DA17AD361605AC7D00ABE467 /* RayTracer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RayTracer.h; path = Rendering/RayTracer.h; sourceTree = "<group>"; };
+		DA17AD371605AC7D00ABE467 /* RayTracer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RayTracer.m; path = Rendering/RayTracer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,7 @@
 		DA056E9C15972FAB00C0B447 /* RTOpenGL */ = {
 			isa = PBXGroup;
 			children = (
+				DA17AD351605AC5A00ABE467 /* Rendering */,
 				DA17AD2D1605A4CB00ABE467 /* Shaders */,
 				DA056EA515972FAB00C0B447 /* AppDelegate.h */,
 				DA056EA615972FAB00C0B447 /* AppDelegate.m */,
@@ -190,6 +194,15 @@
 				DA17AD331605A5AD00ABE467 /* RTShaderProgram.m */,
 			);
 			name = Shaders;
+			sourceTree = "<group>";
+		};
+		DA17AD351605AC5A00ABE467 /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				DA17AD361605AC7D00ABE467 /* RayTracer.h */,
+				DA17AD371605AC7D00ABE467 /* RayTracer.m */,
+			);
+			name = Rendering;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +321,7 @@
 				DA056EB415972FAB00C0B447 /* ViewController.m in Sources */,
 				DA17AD311605A56000ABE467 /* BaseShaderProgram.m in Sources */,
 				DA17AD341605A5AE00ABE467 /* RTShaderProgram.m in Sources */,
+				DA17AD381605AC7D00ABE467 /* RayTracer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

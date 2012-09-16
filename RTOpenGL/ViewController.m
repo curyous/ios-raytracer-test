@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "RTShaderProgram.h"
+#import "RayTracer.h"
+//#import "RTShaderProgram.h"
 
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
@@ -24,7 +25,7 @@ GLint uniforms[NUM_UNIFORMS];
 enum
 {
     ATTRIB_VERTEX,
-    ATTRIB_NORMAL,
+    ATTRIB_NORMAL_DUPLICATE,
     NUM_ATTRIBUTES
 };
 
@@ -95,10 +96,11 @@ GLfloat gTwoTriangles[9] =
     GLuint _vertexArray;
     GLuint _vertexBuffer;
     
-    RTShaderProgram* _rtShaderProgram;
+    RayTracer* _rayTracer;
+    /*RTShaderProgram* _rtShaderProgram;
     
     GLuint _rtVertexArray;
-    GLuint _rtVertexBuffer;
+    GLuint _rtVertexBuffer;*/
 }
 @property (strong, nonatomic) EAGLContext *context;
 @property (strong, nonatomic) GLKBaseEffect *effect;
@@ -186,7 +188,7 @@ GLfloat gTwoTriangles[9] =
     glVertexAttribPointer(GLKVertexAttribNormal, 3, GL_FLOAT, GL_FALSE, 24, BUFFER_OFFSET(12));
     
     
-    _rtShaderProgram = [[RTShaderProgram alloc] init];
+    /*_rtShaderProgram = [[RTShaderProgram alloc] init];
     
     glGenVertexArraysOES(1, &_rtVertexArray);
     glBindVertexArrayOES(_rtVertexArray);
@@ -195,10 +197,12 @@ GLfloat gTwoTriangles[9] =
     glBindBuffer(GL_ARRAY_BUFFER, _rtVertexBuffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(gTwoTriangles), gTwoTriangles, GL_STATIC_DRAW);
     
-    glEnableVertexAttribArray(GLKVertexAttribPosition);
-    glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, 12, BUFFER_OFFSET(0));
+    glEnableVertexAttribArray(ATTRIB_POSITION);
+    glVertexAttribPointer(ATTRIB_POSITION, 3, GL_FLOAT, GL_FALSE, 12, BUFFER_OFFSET(0));*/
   
     glBindVertexArrayOES(0);
+    
+    _rayTracer = [[RayTracer alloc] init];
 }
 
 - (void)tearDownGL
@@ -267,10 +271,11 @@ GLfloat gTwoTriangles[9] =
     
     glDrawArrays(GL_TRIANGLES, 0, 36);
     
-    glUseProgram(_rtShaderProgram.program);
+    /*glUseProgram(_rtShaderProgram.program);
     glBindVertexArrayOES(_rtVertexArray);
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDrawArrays(GL_TRIANGLES, 0, 3);*/
     
+    [_rayTracer render];
 }
 
 #pragma mark -  OpenGL ES 2 shader compilation
