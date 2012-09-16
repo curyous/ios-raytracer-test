@@ -24,4 +24,12 @@
     return nil;
 }
 
+- (void)bindAttributeLocations {
+    // Do something like:
+    // glBindAttribLocation(_shadowProgram, ATTRIB_VERTEX, "position");
+    // Must be done prior to linking
+    glBindAttribLocation(_program, ATTRIB_POSITION, "aPosition");
+    glBindAttribLocation(_program, ATTRIB_TEXCOORD, "aClipSpace");
+};
+
 @end

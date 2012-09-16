@@ -12,17 +12,17 @@
 @implementation RayTracer
 
 // GL default is CCW (Counter-clockwise)
-GLfloat twoTriangles[18] =
+GLfloat twoTriangles[30] =
 {
     // Data layout is:
-    // positionX, positionY, positionZ
-    -1.0f, -1.0f, 0.0f,
-     1.0f, -1.0f, 0.0f,
-    -1.0f,  1.0f, 0.0f,
+    // positionX, positionY, positionZ,  clipSpaceX, clipSpaceY
+    -1.0f, -1.0f, 0.0f,  -1.0f, -1.0f,
+     1.0f, -1.0f, 0.0f,   1.0f, -1.0f,
+    -1.0f,  1.0f, 0.0f,  -1.0f,  1.0f,
     
-    -1.0f,  1.0f, 0.0f,
-     1.0f, -1.0f, 0.0f,
-     1.0f,  1.0f, 0.0f    
+    -1.0f,  1.0f, 0.0f,  -1.0f,  1.0f,
+     1.0f, -1.0f, 0.0f,   1.0f, -1.0f,
+     1.0f,  1.0f, 0.0f,   1.0f,  1.0f
 };
 
 
@@ -40,7 +40,10 @@ GLfloat twoTriangles[18] =
         glBufferData(GL_ARRAY_BUFFER, sizeof(twoTriangles), twoTriangles, GL_STATIC_DRAW);
         
         glEnableVertexAttribArray(ATTRIB_POSITION);
-        glVertexAttribPointer(ATTRIB_POSITION, 3, GL_FLOAT, GL_FALSE, 12, BUFFER_OFFSET(0));
+        glVertexAttribPointer(ATTRIB_POSITION, 3, GL_FLOAT, GL_FALSE, 20, BUFFER_OFFSET(0));
+        
+        glEnableVertexAttribArray(ATTRIB_TEXCOORD);
+        glVertexAttribPointer(ATTRIB_TEXCOORD, 2, GL_FLOAT, GL_FALSE, 20, BUFFER_OFFSET(12));
         
         glBindVertexArrayOES(0);
         

@@ -6,9 +6,14 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+precision mediump float;
+
 //varying lowp vec4 colorVarying;
+varying mediump vec2 vClipSpace;
 
 void main()
 {
-    gl_FragColor = vec4(0.0, 0.5, 0.0, 1.0);
+    float red = vClipSpace.x * 0.5 + 0.5;
+    float blue = vClipSpace.y * 0.5 + 0.5;
+    gl_FragColor = vec4(red, 0.0, blue, 1.0);
 }

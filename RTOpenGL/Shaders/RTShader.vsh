@@ -7,12 +7,12 @@
 //
 
 attribute vec4 aPosition;
-//attribute vec2 aScreenPosition;
+attribute vec2 aClipSpace;
 
-//varying mediump vec2 vScreenPosition
+varying mediump vec2 vClipSpace;
 
 void main()
 {
-    //vScreenPosition = aScreenPosition;
+    vClipSpace = aClipSpace;
     gl_Position = aPosition;
 }
