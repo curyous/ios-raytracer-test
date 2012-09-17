@@ -87,19 +87,15 @@ bool intersectTriangleFromTexture(vec3 origin, vec3 dir, float i) {
 
 void main()
 {
-    float red = vClipSpace.x * 0.5 + 0.5;
-    float blue = vClipSpace.y * 0.5 + 0.5;
     mediump vec3 pixelPos = uScreenPosition + vClipSpace.x * uRight + vClipSpace.y * uUp;
     mediump vec3 dir = normalize(pixelPos - uEyePosition);
     
-    if (intersectTriangleFromTexture(uEyePosition, dir, 0.0)) {
-        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
-    } else {
- 
-        if (intersectTriangleFromTexture(uEyePosition, dir, 1.0)) {
+    gl_FragColor = vec4(dir, 1.0);
+    
+    for (float i = 0.0; i < 2.0; i++) {
+        if (intersectTriangleFromTexture(uEyePosition, dir, i) ) {
             gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
-        } else {
-            gl_FragColor = vec4(dir, 1.0);
+            break;
         }
     }
 }
