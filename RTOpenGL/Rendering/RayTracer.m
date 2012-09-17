@@ -13,36 +13,25 @@
 
 @implementation RayTracer
 
-// GL default is CCW (Counter-clockwise)
-GLfloat twoTriangles[30] =
-{
-    // Data layout is:
-    // positionX, positionY, positionZ,  clipSpaceX, clipSpaceY
-    -1.0f, -1.0f, 0.0f,  -1.0f, -1.0f,
-     1.0f, -1.0f, 0.0f,   1.0f, -1.0f,
-    -1.0f,  1.0f, 0.0f,  -1.0f,  1.0f,
-    
-    -1.0f,  1.0f, 0.0f,  -1.0f,  1.0f,
-     1.0f, -1.0f, 0.0f,   1.0f, -1.0f,
-     1.0f,  1.0f, 0.0f,   1.0f,  1.0f
-};
-
-GLfloat triangleVertices[18] =
-{
-    // Back
-    -0.5f, 0.5f, 1.0f,
-    -0.5f, 0.5f, 0.0f,
-     0.5f, 0.5f, 0.0f,
-    
-    -0.5f, 0.5f, 1.0f,
-     0.5f, 0.5f, 0.0f,
-     0.5f, 0.5f, 1.0f
-};
 
 
 - (id)init
 {
     if (self = [super init]) {
+        
+        // GL default is CCW (Counter-clockwise)
+        GLfloat twoTriangles[30] =
+        {
+            // Data layout is:
+            // positionX, positionY, positionZ,  clipSpaceX, clipSpaceY
+            -1.0f, -1.0f, 0.0f,  -1.0f, -1.0f,
+             1.0f, -1.0f, 0.0f,   1.0f, -1.0f,
+            -1.0f,  1.0f, 0.0f,  -1.0f,  1.0f,
+            
+            -1.0f,  1.0f, 0.0f,  -1.0f,  1.0f,
+             1.0f, -1.0f, 0.0f,   1.0f, -1.0f,
+             1.0f,  1.0f, 0.0f,   1.0f,  1.0f
+        };
         
         _rtShaderProgram = [[RTShaderProgram alloc] init];
         
@@ -69,12 +58,8 @@ GLfloat triangleVertices[18] =
         // Triangle data
         GLfloat triangleData[TRI_TEX_SIZE * TRI_TEX_SIZE * 3];
         
-        for (int i = 0; i < TRI_TEX_SIZE * TRI_TEX_SIZE * 3; i++) {
+        /*for (int i = 0; i < TRI_TEX_SIZE * TRI_TEX_SIZE * 3; i++) {
             triangleData[i] = 0.15f;
-        }
-        
-        /*for (int i = 768; i < TRI_TEX_SIZE * TRI_TEX_SIZE * 3; i++) {
-            triangleData[i] = 0.0f;
         }*/
         
         // Back
@@ -85,11 +70,6 @@ GLfloat triangleVertices[18] =
         triangleData[ 9] = -0.5f; triangleData[10] = 0.5f; triangleData[11] = 1.0f;
         triangleData[12] =  0.5f; triangleData[13] = 0.5f; triangleData[14] = 0.0f;
         triangleData[15] =  0.5f; triangleData[16] = 0.5f; triangleData[17] = 1.0f;
-        
-        /*triangleData[256 * 3] = 0.7f; triangleData[256 * 3 + 1] = 0.8f; triangleData[256 * 3 + 2] = 0.9f;*/
-        
-        triangleData[765] = 0.0f; triangleData[766] = 0.0f; triangleData[767] = 0.0f;
-        //triangleData[765] = -0.5f; triangleData[766] = 0.5f; triangleData[767] = 0.0f;
         
         
         // Set up texture to contain triangle data
@@ -121,8 +101,6 @@ GLfloat triangleVertices[18] =
     glUniform3f(_rtShaderProgram.screenPositionUniformLocation, _screenPosition.x, _screenPosition.y, _screenPosition.z);
     glUniform3f(_rtShaderProgram.rightUniformLocation, _right.x, _right.y, _right.z);
     glUniform3f(_rtShaderProgram.upUniformLocation, _up.x, _up.y, _up.z);
-    
-    glUniform3fv(_rtShaderProgram.trianglesUniformLocation, sizeof(triangleVertices) / 3, triangleVertices);
     
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, _triangleTexture);

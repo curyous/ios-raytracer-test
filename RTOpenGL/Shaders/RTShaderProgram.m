@@ -15,7 +15,6 @@
 @synthesize rightUniformLocation = _rightUniformLocation;
 @synthesize upUniformLocation = _upUniformLocation;
 
-@synthesize trianglesUniformLocation = _trianglesUniformLocation;
 @synthesize triangleSamplerUniformLocation = _triangleSamplerUniformLocation;
 
 -(id)init {
@@ -27,7 +26,6 @@
         _rightUniformLocation = glGetUniformLocation(_program, "uRight");
         _upUniformLocation = glGetUniformLocation(_program, "uUp");
         
-        _trianglesUniformLocation = glGetUniformLocation(_program, "uTriangleVertices");
         _triangleSamplerUniformLocation = glGetUniformLocation(_program, "uTriangleSampler");
         
         return self;

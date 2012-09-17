@@ -10,22 +10,12 @@
 
 precision mediump float;
 
-struct triangle {
-    vec3 p0;
-    vec3 p1;
-    vec3 p2;
-};
-
-
-//varying lowp vec4 colorVarying;
 varying mediump vec2 vClipSpace;
 
 uniform vec3 uEyePosition;
 uniform vec3 uScreenPosition;
 uniform vec3 uRight;
 uniform vec3 uUp;
-
-uniform vec3 uTriangleVertices[6];
 
 uniform sampler2D uTriangleTexture;
 
@@ -101,30 +91,15 @@ void main()
     float blue = vClipSpace.y * 0.5 + 0.5;
     mediump vec3 pixelPos = uScreenPosition + vClipSpace.x * uRight + vClipSpace.y * uUp;
     mediump vec3 dir = normalize(pixelPos - uEyePosition);
-    //gl_FragColor = vec4(red, 0.0, blue, 1.0);
-    //dir.r = uTriangleVertices[2].z;
-    //vec3 v0 = uTriangleVertices[0];
-    //vec3 v0 = getVertex(0.0);
-    //vec3 v1 = uTriangleVertices[1];
-    //vec3 v1 = getVertex(1.0);
-    //vec3 v2 = getVertex(2.0);
     
     if (intersectTriangleFromTexture(uEyePosition, dir, 0.0)) {
         gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
     } else {
-        //vec3 p0 = getVertex(3.0);
-        //vec3 p1 = getVertex(4.0);
-        //vec3 p2 = getVertex(5.0);
-        
-        
-        
-        //if (intersectTriangle(uEyePosition, dir, uTriangleVertices[3], uTriangleVertices[4], uTriangleVertices[5])) {
-        //if (intersectTriangle(uEyePosition, dir, p0, p1, p2)) {
+ 
         if (intersectTriangleFromTexture(uEyePosition, dir, 1.0)) {
             gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
         } else {
             gl_FragColor = vec4(dir, 1.0);
-            //gl_FragColor = vec4(0.0, v1.z, 0.5, 1.0);
         }
     }
 }

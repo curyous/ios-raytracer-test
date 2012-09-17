@@ -15,7 +15,6 @@
     GLint _rightUniformLocation;
     GLint _upUniformLocation;
     
-    GLint _trianglesUniformLocation;
     GLint _triangleSamplerUniformLocation;
 }
 
@@ -24,7 +23,6 @@
 @property (readonly) GLint rightUniformLocation;
 @property (readonly) GLint upUniformLocation;
 
-@property (readonly) GLint trianglesUniformLocation;
 @property (readonly) GLint triangleSamplerUniformLocation;
 
 @end
