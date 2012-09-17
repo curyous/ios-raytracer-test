@@ -16,6 +16,7 @@
     GLint _upUniformLocation;
     
     GLint _trianglesUniformLocation;
+    GLint _triangleSamplerUniformLocation;
 }
 
 @property (readonly) GLint eyePositionUniformLocation;
@@ -24,5 +25,6 @@
 @property (readonly) GLint upUniformLocation;
 
 @property (readonly) GLint trianglesUniformLocation;
+@property (readonly) GLint triangleSamplerUniformLocation;
 
 @end

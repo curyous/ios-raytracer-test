@@ -27,6 +27,17 @@ uniform vec3 uUp;
 
 uniform vec3 uTriangleVertices[6];
 
+uniform sampler2D uTriangleTexture;
+
+vec3 getVertex(float index) {
+    
+    float u = (index + 0.5) / 256.0;
+    
+    float v = 0.5 / 256.0;
+    
+    return texture2D(uTriangleTexture, vec2(u, v)).rgb;
+    
+}
 
 bool intersectTriangle(vec3 origin, vec3 dir, vec3 p0, vec3 p1, vec3 p2) {
     vec3 edge1, edge2, tvec, pvec, qvec;
@@ -79,13 +90,27 @@ void main()
     mediump vec3 dir = normalize(pixelPos - uEyePosition);
     //gl_FragColor = vec4(red, 0.0, blue, 1.0);
     //dir.r = uTriangleVertices[2].z;
-    if (intersectTriangle(uEyePosition, dir, uTriangleVertices[0], uTriangleVertices[1], uTriangleVertices[2])) {
+    //vec3 v0 = uTriangleVertices[0];
+    vec3 v0 = getVertex(0.0);
+    //vec3 v1 = uTriangleVertices[1];
+    vec3 v1 = getVertex(1.0);
+    vec3 v2 = getVertex(2.0);
+    
+    if (intersectTriangle(uEyePosition, dir, v0, v1, v2)) {
         gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
     } else {
-        if (intersectTriangle(uEyePosition, dir, uTriangleVertices[3], uTriangleVertices[4], uTriangleVertices[5])) {
+        vec3 p0 = getVertex(3.0);
+        vec3 p1 = getVertex(4.0);
+        vec3 p2 = getVertex(5.0);
+        
+        
+        
+        //if (intersectTriangle(uEyePosition, dir, uTriangleVertices[3], uTriangleVertices[4], uTriangleVertices[5])) {
+        if (intersectTriangle(uEyePosition, dir, p0, p1, p2)) {                
             gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
         } else {
-            gl_FragColor = vec4(dir, 1.0);
+            //gl_FragColor = vec4(dir, 1.0);
+            gl_FragColor = vec4(0.0, v1.z, 0.5, 1.0);
         }
     }
 }

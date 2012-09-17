@@ -21,6 +21,8 @@
     GLKVector3 _screenPosition;
     GLKVector3 _right;
     GLKVector3 _up;
+    
+    GLuint _triangleTexture;
 }
 
 -(void)render;
